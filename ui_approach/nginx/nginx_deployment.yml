@@ -24,4 +24,20 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: role
+                    operator: In
+                    values:
+                      - system
+
+      tolerations:
+        - key: system
+          operator: Equal
+          value: "true"
+          effect: NoSchedule 
+          
 
