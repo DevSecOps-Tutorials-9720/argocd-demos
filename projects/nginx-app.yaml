@@ -3,6 +3,8 @@ kind: Application               # Kind of resource
 metadata:                        # Metadata section                         
   name: nginx-frontend          # App name
   namespace: argocd             # Must exist in ArgoCD namespace
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 
 spec:
   project: argocd-demos        # Assigns app to the frontend-team Project
