@@ -13,6 +13,9 @@ spec:
      - namespace: default
        server: https://kubernetes.default.svc     # Target cluster server url
 
+     - namespace: argocd
+       server: https://kubernetes.default.svc 
+
   clusterResourceWhitelist:    # Which cluster-wide resources are allowed (e.g., CRDs)
     - group: "*"               # '*' means allow all groups
       kind: "*"                # '*' means allow all kinds
